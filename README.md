@@ -1,6 +1,6 @@
 # Guard Time Backend
 
-This is a Next.js backend to replace the original `teencare.in` server.
+This is a Next.js backend
 
 ## Setup
 
