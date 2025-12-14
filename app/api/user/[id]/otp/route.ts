@@ -1,14 +1,16 @@
 import { NextResponse } from 'next/server';
 import { firestore } from '@/lib/firebaseAdmin';
 
-export async function GET(request: Request, context: { params: Promise<{ phone: string }> }) {
-    const { phone } = await context.params;
+export async function GET(request: Request, context: { params: Promise<{ id: string }> }) {
+    const { id } = await context.params;
+    const phone = id;
     console.log(`Sending OTP to ${phone}`);
     return NextResponse.json({ statusCode: 200, message: "OTP sent successfully (Mock: 1234)" });
 }
 
-export async function POST(request: Request, context: { params: Promise<{ phone: string }> }) {
-    const { phone } = await context.params;
+export async function POST(request: Request, context: { params: Promise<{ id: string }> }) {
+    const { id } = await context.params;
+    const phone = id;
     try {
         const body = await request.json();
         const { otp } = body;
